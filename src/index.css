@@ -8,42 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 210 100% 97%;
-    --foreground: 215 25% 15%;
+    --background: 0 0% 100%;
+    --foreground: 220 25% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 220 25% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 220 25% 10%;
 
-    --primary: 195 85% 45%;
+    --primary: 220 70% 20%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 60% 60%;
+    --secondary: 150 60% 45%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 280 70% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 220 60% 96%;
+    --accent-foreground: 220 70% 20%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 195 85% 45%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 220 70% 20%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom colors for SplitSync */
-    --hero-gradient-from: 195 85% 45%;
-    --hero-gradient-to: 270 60% 60%;
-    --feature-card-bg: 0 0% 100%;
-    --glass-bg: 0 0% 100%;
-    --glass-border: 215 20% 88%;
+    /* Custom colors for finance theme */
+    --finance-navy: 220 70% 20%;
+    --finance-green: 150 60% 45%;
+    --finance-blue: 215 80% 50%;
+    --success: 150 60% 45%;
+    --info: 215 80% 50%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -56,40 +56,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 215 30% 8%;
-    --foreground: 210 40% 98%;
+    --background: 220 25% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 215 25% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 215 25% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 195 85% 55%;
-    --primary-foreground: 215 30% 8%;
+    --primary: 215 80% 60%;
+    --primary-foreground: 220 25% 8%;
 
-    --secondary: 270 60% 65%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 150 60% 50%;
+    --secondary-foreground: 220 25% 8%;
 
-    --muted: 215 25% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 15% 60%;
 
-    --accent: 280 70% 70%;
-    --accent-foreground: 215 30% 8%;
+    --accent: 220 20% 18%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 195 85% 55%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 215 80% 60%;
 
     /* Custom colors for dark mode */
-    --hero-gradient-from: 195 85% 45%;
-    --hero-gradient-to: 270 60% 60%;
-    --feature-card-bg: 215 25% 12%;
-    --glass-bg: 215 25% 12%;
-    --glass-border: 215 25% 25%;
+    --finance-navy: 215 80% 60%;
+    --finance-green: 150 60% 50%;
+    --finance-blue: 215 80% 60%;
+    --success: 150 60% 50%;
+    --info: 215 80% 60%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -113,45 +113,36 @@ All colors MUST be HSL.
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-semibold tracking-tight;
   }
 }
 
 @layer utilities {
-  .glass-card {
-    @apply backdrop-blur-md bg-card/80 border border-glass-border shadow-xl;
+  .finance-gradient {
+    background: linear-gradient(135deg, hsl(var(--finance-navy)), hsl(var(--finance-blue)));
   }
 
-  .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--hero-gradient-from)), hsl(var(--hero-gradient-to)));
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+  .success-gradient {
+    background: linear-gradient(135deg, hsl(var(--finance-green)), hsl(var(--finance-blue)));
   }
 
   .animate-fade-up {
-    animation: fadeUp 0.8s ease-out forwards;
+    animation: fadeUp 0.6s ease-out forwards;
     opacity: 0;
   }
 
   @keyframes fadeUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .stat-card {
+    @apply bg-card border border-border shadow-sm hover:shadow-md transition-shadow duration-300;
   }
 }
