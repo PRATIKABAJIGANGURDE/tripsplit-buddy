@@ -9,41 +9,31 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 25% 10%;
-
+    --foreground: 210 20% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 10%;
-
+    --card-foreground: 210 20% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 10%;
-
-    --primary: 220 70% 20%;
+    --popover-foreground: 210 20% 10%;
+    --primary: 164 65% 44%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 150 60% 45%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 15% 45%;
-
-    --accent: 220 60% 96%;
-    --accent-foreground: 220 70% 20%;
-
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 210 20% 10%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 210 15% 40%;
+    --accent: 164 65% 44%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 220 70% 20%;
-
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 20% 90%;
+    --input: 210 20% 85%;
+    --ring: 164 65% 44%;
     --radius: 0.5rem;
 
-    /* Custom colors for finance theme */
-    --finance-navy: 220 70% 20%;
-    --finance-green: 150 60% 45%;
-    --finance-blue: 215 80% 50%;
-    --success: 150 60% 45%;
-    --info: 215 80% 50%;
+    /* App Theme Colors */
+    --app-green: 164 65% 44%;
+    --app-dark: 210 25% 20%;
+    --app-navy: 210 30% 15%;
+    --app-light-bg: 210 30% 98%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -56,40 +46,25 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 220 25% 8%;
+    --background: 210 30% 10%;
     --foreground: 0 0% 98%;
-
-    --card: 220 20% 12%;
+    --card: 210 25% 15%;
     --card-foreground: 0 0% 98%;
-
-    --popover: 220 20% 12%;
+    --popover: 210 25% 15%;
     --popover-foreground: 0 0% 98%;
-
-    --primary: 215 80% 60%;
-    --primary-foreground: 220 25% 8%;
-
-    --secondary: 150 60% 50%;
-    --secondary-foreground: 220 25% 8%;
-
-    --muted: 220 20% 15%;
-    --muted-foreground: 220 15% 60%;
-
-    --accent: 220 20% 18%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62% 50%;
+    --primary: 164 65% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 25% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 25% 20%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 164 65% 44%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 215 80% 60%;
-
-    /* Custom colors for dark mode */
-    --finance-navy: 215 80% 60%;
-    --finance-green: 150 60% 50%;
-    --finance-blue: 215 80% 60%;
-    --success: 150 60% 50%;
-    --info: 215 80% 60%;
+    --border: 210 25% 25%;
+    --input: 210 25% 25%;
+    --ring: 164 65% 44%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -118,20 +93,25 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .finance-gradient {
-    background: linear-gradient(135deg, hsl(var(--finance-navy)), hsl(var(--finance-blue)));
+  /* Custom Utilities */
+  .app-gradient {
+    background: linear-gradient(135deg, hsl(var(--app-green)), hsl(164 65% 54%));
   }
 
-  .success-gradient {
-    background: linear-gradient(135deg, hsl(var(--finance-green)), hsl(var(--finance-blue)));
+  .clean-card {
+    @apply bg-white rounded-2xl shadow-sm border border-border transition-all duration-300 hover:shadow-md;
   }
 
-  .animate-fade-up {
-    animation: fadeUp 0.6s ease-out forwards;
-    opacity: 0;
+  .feature-icon {
+    @apply w-14 h-14 rounded-xl flex items-center justify-center text-white;
+    background: hsl(var(--app-green));
   }
 
-  @keyframes fadeUp {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -140,9 +120,5 @@ All colors MUST be HSL.
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  .stat-card {
-    @apply bg-card border border-border shadow-sm hover:shadow-md transition-shadow duration-300;
   }
 }

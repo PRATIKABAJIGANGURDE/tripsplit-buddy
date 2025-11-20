@@ -1,92 +1,111 @@
 import { Button } from "@/components/ui/button";
-import { Download, Shield, TrendingUp, Users } from "lucide-react";
+import { Download } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 bg-gradient-to-b from-background to-muted/30">
+    <section className="relative min-h-[90vh] flex items-center justify-center px-4 py-16 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="text-left">
-            <div className="inline-block mb-4 px-4 py-2 bg-finance-navy/10 rounded-full">
-              <span className="text-sm font-medium text-finance-navy">Financial Management Made Simple</span>
+          <div className="text-left space-y-8">
+            <div className="flex items-center gap-4 mb-6">
+              <img src={logo} alt="SplitSync Logo" className="w-20 h-20" />
+              <h2 className="text-4xl font-bold text-foreground">SplitSync</h2>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground leading-tight">
-              Stop Chasing Friends for Money After Trips
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
+              Didn't Receive Your Money After Trip?
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Professional expense tracking and settlement platform for group travels. 
-              Automated reminders, instant approvals, and transparent accounting.
+            <p className="text-2xl md:text-3xl font-medium" style={{ color: "hsl(var(--app-green))" }}>
+              Here's Your Solution
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button 
-                size="lg" 
-                className="text-lg px-8 py-6 finance-gradient hover:opacity-90 transition-opacity"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download App
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="text-lg px-8 py-6 border-2"
-              >
-                View Demo
-              </Button>
-            </div>
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+              Track trip expenses with friends and get paid back instantly. 
+              Simple expense splitting, payment tracking, and automated reminders.
+            </p>
 
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
+            <Button 
+              size="lg" 
+              className="text-lg px-12 py-7 app-gradient hover:opacity-90 transition-opacity shadow-lg"
+            >
+              <Download className="mr-2 h-6 w-6" />
+              Download App Now
+            </Button>
+
+            {/* Trust Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-8">
               <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <Shield className="h-5 w-5 text-finance-green" />
-                  <span className="text-2xl font-bold text-foreground">100%</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Secure</p>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <Users className="h-5 w-5 text-finance-blue" />
-                  <span className="text-2xl font-bold text-foreground">50K+</span>
-                </div>
+                <p className="text-3xl font-bold" style={{ color: "hsl(var(--app-green))" }}>50K+</p>
                 <p className="text-sm text-muted-foreground">Active Users</p>
               </div>
               <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <TrendingUp className="h-5 w-5 text-finance-green" />
-                  <span className="text-2xl font-bold text-foreground">$2M+</span>
-                </div>
+                <p className="text-3xl font-bold" style={{ color: "hsl(var(--app-green))" }}>2.3 Days</p>
+                <p className="text-sm text-muted-foreground">Avg Settlement</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold" style={{ color: "hsl(var(--app-green))" }}>₹2M+</p>
                 <p className="text-sm text-muted-foreground">Settled</p>
               </div>
             </div>
           </div>
 
           {/* Right Content - App Preview */}
-          <div className="relative">
-            <div className="stat-card rounded-2xl p-8 bg-gradient-to-br from-finance-navy/5 to-finance-blue/5">
-              <div className="aspect-[3/4] bg-background rounded-xl border-2 border-border flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full finance-gradient flex items-center justify-center">
-                    <Download className="h-10 w-10 text-white" />
+          <div className="relative flex justify-center">
+            <div className="relative">
+              {/* Phone mockup frame */}
+              <div className="w-[320px] h-[640px] bg-app-navy rounded-[3rem] p-4 shadow-2xl border-8 border-gray-800">
+                <div className="w-full h-full bg-app-light-bg rounded-[2.5rem] overflow-hidden flex flex-col">
+                  {/* Mock app header */}
+                  <div className="bg-app-navy text-white p-6">
+                    <h3 className="text-2xl font-bold">Mount Everest</h3>
+                    <p className="text-sm text-gray-300 mt-1">Code: 4956900415</p>
                   </div>
-                  <p className="text-muted-foreground font-medium">App Preview</p>
+                  
+                  {/* Mock tabs */}
+                  <div className="flex border-b bg-white">
+                    <div className="flex-1 py-3 text-center font-medium" style={{ color: "hsl(var(--app-green))", borderBottom: "3px solid hsl(var(--app-green))" }}>
+                      Splits
+                    </div>
+                    <div className="flex-1 py-3 text-center text-muted-foreground">
+                      Members
+                    </div>
+                    <div className="flex-1 py-3 text-center text-muted-foreground">
+                      Summary
+                    </div>
+                  </div>
+
+                  {/* Mock content */}
+                  <div className="flex-1 bg-app-light-bg p-4">
+                    <div className="clean-card p-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-semibold text-foreground">Lunch at Top</p>
+                          <p className="text-sm text-muted-foreground">Created by You</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-lg">₹69</p>
+                          <p className="text-sm text-red-500">Not Paid</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Mock button */}
+                  <div className="p-4 bg-white">
+                    <div className="app-gradient text-white py-4 rounded-xl text-center font-semibold">
+                      + Create Split
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Floating stats cards */}
-            <div className="absolute -bottom-6 -left-6 stat-card rounded-xl p-4 bg-background">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-lg success-gradient flex items-center justify-center">
-                  <TrendingUp className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Avg. Settlement</p>
-                  <p className="text-lg font-bold text-foreground">2.3 days</p>
-                </div>
+
+              {/* Floating indicator */}
+              <div className="absolute -bottom-6 -left-6 clean-card p-4 animate-fade-in">
+                <p className="text-xs text-muted-foreground">Real-time Updates</p>
+                <p className="font-bold" style={{ color: "hsl(var(--app-green))" }}>Instant Sync</p>
               </div>
             </div>
           </div>
