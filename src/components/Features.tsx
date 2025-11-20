@@ -1,97 +1,71 @@
-import { Receipt, PieChart, Bell, Lock, Zap, FileCheck } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Receipt, PieChart, Bell, Lock, Zap, Users2 } from "lucide-react";
 
 const features = [
   {
     icon: Zap,
     title: "Instant Trip Setup",
-    description: "Create trips in seconds with secure join codes. Enterprise-grade access management with admin controls.",
+    description: "Create trips in seconds with unique 10-digit join codes. Start tracking expenses immediately.",
   },
   {
     icon: Receipt,
-    title: "Smart Split Calculator",
-    description: "Automated expense allocation with equal or custom splits. Real-time balance calculations and tracking.",
-  },
-  {
-    icon: FileCheck,
-    title: "Payment Verification",
-    description: "Built-in approval workflow with payment status tracking. Maintain complete financial transparency.",
-  },
-  {
-    icon: PieChart,
-    title: "Analytics Dashboard",
-    description: "Comprehensive expense reports and insights. Track spending patterns and settlement efficiency.",
+    title: "Smart Expense Splitting",
+    description: "Split bills equally or set custom amounts. Automated calculations for fair distribution.",
   },
   {
     icon: Bell,
-    title: "Automated Reminders",
-    description: "Smart notification system for pending payments and approvals. Never miss a settlement deadline.",
+    title: "Payment Reminders",
+    description: "Automated notifications for pending payments. Never chase friends for money again.",
+  },
+  {
+    icon: PieChart,
+    title: "Payment Tracking",
+    description: "Real-time payment status updates. Track who paid, who's pending, and who owes.",
+  },
+  {
+    icon: Users2,
+    title: "Group Management",
+    description: "Easy member management with admin controls. Add or remove members anytime.",
   },
   {
     icon: Lock,
-    title: "Bank-Level Security",
-    description: "End-to-end encryption with secure data storage. Your financial information is always protected.",
+    title: "Secure & Private",
+    description: "Your financial data is encrypted and protected. Bank-level security standards.",
   },
 ];
 
 const Features = () => {
   return (
-    <section className="py-24 px-4 bg-muted/30">
+    <section className="py-24 px-4 bg-app-light-bg">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-block mb-4 px-4 py-2 bg-finance-navy/10 rounded-full">
-            <span className="text-sm font-medium text-finance-navy">Core Capabilities</span>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Professional Expense Management
+            Everything You Need
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Enterprise features built for seamless group financial coordination
+            Professional expense management designed for group travels
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Card 
+              <div 
                 key={index} 
-                className="stat-card border-2 hover:border-finance-navy/20 transition-all duration-300"
+                className="clean-card p-8 hover:scale-105 transition-transform"
               >
-                <CardContent className="p-6">
-                  <div className="mb-4 w-12 h-12 rounded-lg finance-gradient flex items-center justify-center">
-                    <Icon className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <div className="feature-icon mb-6">
+                  <Icon className="h-7 w-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-foreground">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
             );
           })}
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-6 stat-card rounded-xl">
-            <p className="text-4xl font-bold text-finance-navy mb-2">99.9%</p>
-            <p className="text-sm text-muted-foreground">Uptime</p>
-          </div>
-          <div className="text-center p-6 stat-card rounded-xl">
-            <p className="text-4xl font-bold text-finance-green mb-2">$2M+</p>
-            <p className="text-sm text-muted-foreground">Settled</p>
-          </div>
-          <div className="text-center p-6 stat-card rounded-xl">
-            <p className="text-4xl font-bold text-finance-blue mb-2">50K+</p>
-            <p className="text-sm text-muted-foreground">Users</p>
-          </div>
-          <div className="text-center p-6 stat-card rounded-xl">
-            <p className="text-4xl font-bold text-finance-navy mb-2">4.8★</p>
-            <p className="text-sm text-muted-foreground">Rating</p>
-          </div>
         </div>
       </div>
     </section>
