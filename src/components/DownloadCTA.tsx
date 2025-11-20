@@ -1,45 +1,66 @@
 import { Button } from "@/components/ui/button";
-import { Download, Smartphone } from "lucide-react";
+import { Download, CheckCircle2 } from "lucide-react";
+
+const benefits = [
+  "Instant expense tracking",
+  "Automated payment reminders",
+  "Secure data encryption",
+  "Multi-platform support",
+];
 
 const DownloadCTA = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 gradient-primary opacity-10" />
-      
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <div className="glass-card p-12 rounded-3xl">
-          <div className="mb-8">
-            <div className="inline-flex p-4 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 mb-6">
-              <Smartphone className="h-12 w-12 text-primary" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Ready to Simplify Your Group Trips?
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of travelers who've eliminated the stress of tracking group expenses
-            </p>
+    <section className="py-24 px-4">
+      <div className="max-w-5xl mx-auto">
+        <div className="stat-card rounded-2xl p-12 md:p-16 text-center relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-0 left-0 w-full h-full" 
+                 style={{
+                   backgroundImage: 'radial-gradient(circle, hsl(var(--finance-navy)) 1px, transparent 1px)',
+                   backgroundSize: '30px 30px'
+                 }}
+            />
           </div>
 
-          <Button 
-            size="lg" 
-            className="text-xl px-12 py-8 rounded-2xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105 gradient-primary"
-          >
-            <Download className="mr-3 h-6 w-6" />
-            Download SplitSync Now
-          </Button>
+          <div className="relative z-10">
+            <div className="inline-block mb-4 px-4 py-2 bg-finance-green/10 rounded-full">
+              <span className="text-sm font-medium text-finance-green">Start Free Today</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Ready to Streamline Your<br />Group Finances?
+            </h2>
+            
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Join thousands of travelers managing expenses professionally
+            </p>
 
-          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span>Free to Download</span>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+              <Button 
+                size="lg" 
+                className="text-lg px-10 py-6 finance-gradient hover:opacity-90 transition-opacity"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download for iOS
+              </Button>
+              <Button 
+                size="lg" 
+                className="text-lg px-10 py-6 success-gradient hover:opacity-90 transition-opacity"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download for Android
+              </Button>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-secondary rounded-full" />
-              <span>iOS & Android</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-accent rounded-full" />
-              <span>No Ads</span>
+
+            {/* Benefits List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center gap-2 text-left">
+                  <CheckCircle2 className="h-5 w-5 text-finance-green flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">{benefit}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
