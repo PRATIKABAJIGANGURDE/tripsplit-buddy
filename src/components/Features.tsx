@@ -54,7 +54,7 @@ const Features = () => {
     <section id="features" className="py-24 px-4 bg-app-light-bg relative overflow-hidden">
       {/* Decorative background blob */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 right-0 w-[800px] h-[800px] bg-gray-200/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="hidden md:block absolute top-1/2 right-0 w-[800px] h-[800px] bg-gray-200/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">

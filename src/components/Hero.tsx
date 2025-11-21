@@ -30,7 +30,7 @@ const Hero = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -top-[20%] -right-[10%] w-[800px] h-[800px] bg-gradient-to-br from-app-green/20 to-emerald-500/20 rounded-full blur-3xl mix-blend-multiply"
+          className="hidden md:block absolute -top-[20%] -right-[10%] w-[800px] h-[800px] bg-gradient-to-br from-app-green/20 to-emerald-500/20 rounded-full blur-3xl mix-blend-multiply"
         />
 
         <motion.div
@@ -46,7 +46,7 @@ const Hero = () => {
             ease: "easeInOut",
             delay: 2
           }}
-          className="absolute top-[20%] -left-[10%] w-[600px] h-[600px] bg-gradient-to-tr from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl mix-blend-multiply"
+          className="hidden md:block absolute top-[20%] -left-[10%] w-[600px] h-[600px] bg-gradient-to-tr from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl mix-blend-multiply"
         />
 
         <motion.div
@@ -62,7 +62,7 @@ const Hero = () => {
             ease: "easeInOut",
             delay: 4
           }}
-          className="absolute -bottom-[20%] left-[20%] w-[700px] h-[700px] bg-gradient-to-t from-purple-400/20 to-pink-400/20 rounded-full blur-3xl mix-blend-multiply"
+          className="hidden md:block absolute -bottom-[20%] left-[20%] w-[700px] h-[700px] bg-gradient-to-t from-purple-400/20 to-pink-400/20 rounded-full blur-3xl mix-blend-multiply"
         />
       </div>
 
