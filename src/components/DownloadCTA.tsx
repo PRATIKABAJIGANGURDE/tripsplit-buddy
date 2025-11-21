@@ -20,7 +20,7 @@ const DownloadCTA = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="clean-card p-12 md:p-16 text-center relative overflow-hidden"
+          className="clean-card p-6 md:p-16 text-center relative overflow-hidden"
         >
           {/* Background Gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-app-green/5 pointer-events-none" />
@@ -55,7 +55,7 @@ const DownloadCTA = () => {
               <a href="/splitsync.apk" download>
                 <Button
                   size="lg"
-                  className="text-xl px-16 py-8 app-gradient hover:opacity-90 transition-all shadow-xl mb-12 hover:scale-105 active:scale-95"
+                  className="text-lg md:text-xl px-8 md:px-16 py-6 md:py-8 app-gradient hover:opacity-90 transition-all shadow-xl mb-12 hover:scale-105 active:scale-95"
                 >
                   <Download className="mr-3 h-7 w-7" />
                   Download SplitSync
