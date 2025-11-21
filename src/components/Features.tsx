@@ -1,4 +1,5 @@
 import { Receipt, PieChart, Bell, Lock, Zap, Users2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -33,40 +34,80 @@ const features = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 }
+};
+
 const Features = () => {
   return (
-    <section className="py-24 px-4 bg-app-light-bg">
-      <div className="max-w-7xl mx-auto">
+    <section id="features" className="py-24 px-4 bg-app-light-bg relative overflow-hidden">
+      {/* Decorative background blob */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 right-0 w-[800px] h-[800px] bg-gray-200/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-bold mb-4 text-foreground"
+          >
             Everything You Need
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl text-muted-foreground max-w-2xl mx-auto"
+          >
             Professional expense management designed for group travels
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div 
-                key={index} 
-                className="clean-card p-8 hover:scale-105 transition-transform"
+              <motion.div
+                key={index}
+                variants={item}
+                whileHover={{ y: -5 }}
+                className="clean-card p-10 hover:shadow-xl cursor-pointer group bg-white/80 backdrop-blur-sm border-white/20"
               >
-                <div className="feature-icon mb-6">
-                  <Icon className="h-7 w-7" />
+                <div className="feature-icon mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="h-12 w-12" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-foreground">
+                <h3 className="text-2xl font-bold mb-3 text-foreground">
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
