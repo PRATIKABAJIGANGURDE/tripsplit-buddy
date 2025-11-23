@@ -1,7 +1,17 @@
-import { Receipt, PieChart, Bell, Lock, Zap, Users2 } from "lucide-react";
+import { Receipt, PieChart, Bell, Lock, Zap, Users2, Calendar, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
 
 const features = [
+  {
+    icon: Calendar,
+    title: "Smart Trip Planning",
+    description: "Plan your trips day-wise and time-wise. Create detailed itineraries with scheduled tasks and activities.",
+  },
+  {
+    icon: Smartphone,
+    title: "UPI Integration",
+    description: "Settle payments instantly through UPI apps. Direct integration with all major payment platforms.",
+  },
   {
     icon: Zap,
     title: "Instant Trip Setup",

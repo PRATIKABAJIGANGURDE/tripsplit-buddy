@@ -76,9 +76,9 @@ const Hero = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
-                Didn't Receive Your <br />
+                Plan, Split & Settle <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-app-green to-emerald-600">
-                  Money After Trip?
+                  Your Trips Seamlessly
                 </span>
               </h1>
             </motion.div>
@@ -89,7 +89,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               className="text-xl md:text-2xl font-medium text-foreground/80"
             >
-              Here&apos;s Your Solution
+              Now with UPI Integration & Smart Trip Planning
             </motion.p>
 
             <motion.p
@@ -98,14 +98,14 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
-              Track trip expenses with friends and get paid back instantly. Simple expense splitting,
-              payment tracking, and automated reminders.
+              Plan your trips day-wise and time-wise, split expenses effortlessly, and settle payments instantly through UPI apps. Complete trip management from planning to payment in one place.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              className="flex items-center gap-3"
             >
               <a href="/splitsync.apk" download>
                 <Button
@@ -116,6 +116,23 @@ const Hero = () => {
                   Download App Now
                 </Button>
               </a>
+
+              {/* New Update Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r from-app-green/10 to-emerald-500/10 border border-app-green/30 rounded-full"
+              >
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="w-1.5 h-1.5 bg-app-green rounded-full"
+                />
+                <span className="text-xs font-medium text-app-green">
+                  New Update
+                </span>
+              </motion.div>
             </motion.div>
 
             {/* Trust Stats */}
@@ -173,9 +190,9 @@ const Hero = () => {
                 transition={{ delay: 1, duration: 0.5 }}
                 className="absolute -bottom-6 -left-12 clean-card p-4 shadow-xl z-20 border-l-4 border-app-green"
               >
-                <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Real-time Updates</p>
+                <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">UPI Payments</p>
                 <p className="font-bold text-lg text-foreground">
-                  Instant Sync
+                  Instant Settle
                 </p>
               </motion.div>
             </motion.div>
