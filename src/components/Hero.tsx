@@ -107,7 +107,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               className="flex items-center gap-3"
             >
-              <a href="/splitsync.apk" download>
+              <a href="https://github.com/PRATIKABAJIGANGURDE/tripsplit-buddy/releases/download/splitsync/Splitsync.apk" download>
                 <Button
                   size="lg"
                   className="text-base px-8 py-6 app-gradient hover:opacity-90 transition-all shadow-lg hover:shadow-app-green/25 hover:scale-105 active:scale-95"

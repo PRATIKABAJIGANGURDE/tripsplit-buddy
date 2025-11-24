@@ -52,7 +52,7 @@ const DownloadCTA = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              <a href="/splitsync.apk" download>
+              <a href="https://github.com/PRATIKABAJIGANGURDE/tripsplit-buddy/releases/download/splitsync/Splitsync.apk" download>
                 <Button
                   size="lg"
                   className="text-lg md:text-xl px-8 md:px-16 py-6 md:py-8 app-gradient hover:opacity-90 transition-all shadow-xl mb-12 hover:scale-105 active:scale-95"
