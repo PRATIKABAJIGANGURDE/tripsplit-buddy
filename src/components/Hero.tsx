@@ -75,9 +75,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
                 Plan, Split & Settle <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-app-green to-emerald-600">
+                <span className="text-gradient">
                   Your Trips Seamlessly
                 </span>
               </h1>
@@ -87,7 +87,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-              className="text-xl md:text-2xl font-medium text-foreground/80"
+              className="text-xl md:text-2xl font-semibold text-foreground/90"
             >
               Now with UPI Integration & Smart Trip Planning
             </motion.p>
@@ -105,7 +105,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-              className="flex items-center gap-3"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-3"
             >
               <a href="https://github.com/PRATIKABAJIGANGURDE/tripsplit-buddy/releases/download/splitsync/Splitsync.apk" download>
                 <Button
@@ -122,14 +122,14 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-gradient-to-r from-app-green/10 to-emerald-500/10 border border-app-green/30 rounded-full"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-app-green/10 to-emerald-500/10 border border-app-green/30 rounded-full"
               >
                 <motion.span
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
                   className="w-1.5 h-1.5 bg-app-green rounded-full"
                 />
-                <span className="text-xs font-medium text-app-green">
+                <span className="text-xs sm:text-sm font-medium text-app-green">
                   New Update
                 </span>
               </motion.div>
@@ -162,7 +162,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
-            className="relative flex justify-center"
+            className="relative hidden lg:flex justify-center"
           >
             <motion.div
               animate={{ y: [-10, 10, -10] }}

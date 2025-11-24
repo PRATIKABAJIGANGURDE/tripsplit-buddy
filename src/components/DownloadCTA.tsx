@@ -31,7 +31,7 @@ const DownloadCTA = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold mb-6 text-foreground"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground"
             >
               Stop Chasing Friends for Money
             </motion.h2>
@@ -41,7 +41,7 @@ const DownloadCTA = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
+              className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
             >
               Join thousands using SplitSync to manage group expenses professionally
             </motion.p>
